@@ -1,14 +1,38 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
+import TaskForm from "./components/TaskForm";
+import { TaskProvider } from "./contexts/TaskContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <Header />
+    <TaskProvider>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
+        <div className="max-w-4xl mx-auto px-4 py-8">
+          <Header />
+          <div className="space-y-8">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+              <TaskForm />
+            </div>
+          </div>
+        </div>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+          className="toast-container"
+        />
       </div>
-    </div>
+    </TaskProvider>
   );
 }
 
