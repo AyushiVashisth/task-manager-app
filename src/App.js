@@ -6,6 +6,7 @@ import { TaskProvider } from "./contexts/TaskContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TaskList from "./components/TaskList";
+import TaskFilter from "./components/TaskFilter";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
           <div className="space-y-8">
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <TaskForm />
+            </div>
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+              <TaskFilter />
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <TaskList />
